@@ -41,18 +41,18 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    
+    debugger
     if(!req.query.address) return log(`Yo, where that address be?`)
     geocode(req.query.address, (err, {latitude, longitude, location} = {}) => {
         if(err) {
             log('error!!')
-            res.send({
+            return res.send({
                 Error: err
             })
         }
-        forecast(latitude, longitude, (error, {forecastData} = 0) => {
+        forecast(latitude, longitude, (error, forecastData = '') => {
             if(error) {
-                res.send({
+                return res.send({
                     Error: err
                 })
             } else {

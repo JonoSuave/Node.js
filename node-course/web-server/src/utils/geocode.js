@@ -7,9 +7,9 @@ const geocode = (address, callback) => {
         const {features} = body
         console.log(features)
         if(err) {
-            callback(`Unable to connect to location services! Is your WiFi connected?`)
+            return callback(`Unable to connect to location services! Is your WiFi connected?`)
         } else if(features == false || features.length === 0) {
-            callback('Unable to find location. Try another search', undefined)
+            return callback('Unable to find location. Try another search', undefined)
         } else {
             callback(undefined,{
                 latitude: features[0].center[1],

@@ -14,10 +14,13 @@ weatherForm.addEventListener('submit', (e) => {
     // console.log(weatherSearch)
     fetch(`http://localhost:3000/weather?address=${inputValue}`)
     .then((response) => {
+        // debugger
         response.json()
         .then((data) => {
-            if(data.error) {
-                messageOne.textContent(data.error)
+            console.log(data.Error)
+            if(data.Error) {
+                console.log('hit error')
+                return messageOne.textContent = data.Error
             } else {
                 messageOne.textContent = data.location
                 messageTwo.textContent = `${data.forecastData.currTemp} degrees, currently`
