@@ -38,6 +38,21 @@ header a {
     text-decoration: none;
 }
 
+input {
+    border: 1px solid #cccccc;
+    padding: 3px;
+    margin: 3px 2px 1px 0;
+}
+
 .portrait {
     width: 250px;
+}
+
+button {
+    cursor: pointer;
+    border: 1px solid #cccccc;
+    background: #888888;
+    border-radius: 5px;
+    color: white;
+    padding: 3px;
 }
